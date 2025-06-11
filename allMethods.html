@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>D20 Raw</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="d20-raw">D20 Raw</h1>
+<p>Just roll a d20 and take 6 numbers.</p>
+<h2 id="means">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>2.16667</td>
+<td>&lt;4, 3, 3, 1, 1, 1&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>10.5</td>
+<td>&lt;19, 16, 9, 8, 8, 3&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>18.1667</td>
+<td>&lt;20, 20, 20, 18, 16, 15&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0.666667</td>
+<td>&lt;15, 15, 15, 14, 14, 13&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>32.6667</td>
+<td>&lt;20, 20, 19, 12, 10, 7&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>97.8667</td>
+<td>&lt;20, 20, 18, 2, 1, 1&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;14, 14, 10, 6, 4, 3&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;20, 19, 16, 9, 8, 5&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;19, 15, 13, 11, 9, 4&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;14, 11, 8, 8, 6, 3&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;16, 11, 10, 9, 3, 2&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;20, 12, 12, 10, 7, 4&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;18, 17, 12, 10, 5, 3&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;20, 16, 13, 5, 2, 1&gt;</td>
+<td>3</td>
+</tr>
+<tr>
+<td>&lt;18, 15, 15, 13, 10, 8&gt;</td>
+<td>2</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 6, 6, 3, 2&gt;</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2918</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3147</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2953</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3063</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3045</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3011</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2953</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2917</td>
+</tr>
+<tr>
+<td>9</td>
+<td>3037</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2984</td>
+</tr>
+<tr>
+<td>11</td>
+<td>3013</td>
+</tr>
+<tr>
+<td>12</td>
+<td>3007</td>
+</tr>
+<tr>
+<td>13</td>
+<td>3008</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3019</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2875</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3082</td>
+</tr>
+<tr>
+<td>17</td>
+<td>3033</td>
+</tr>
+<tr>
+<td>18</td>
+<td>3038</td>
+</tr>
+<tr>
+<td>19</td>
+<td>3009</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2888</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>2.16667</td>
+<td>&lt;4, 3, 3, 1, 1, 1&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>2.5</td>
+<td>&lt;5, 5, 2, 1, 1, 1&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>3</td>
+<td>&lt;6, 6, 3, 1, 1, 1&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>8.83333</td>
+<td>&lt;16, 14, 11, 9, 2, 1&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>8.83333</td>
+<td>&lt;14, 13, 9, 7, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>8.83333</td>
+<td>&lt;13, 10, 10, 8, 6, 6&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;17, 13, 12, 8, 8, 5&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>10.5</td>
+<td>&lt;19, 16, 9, 8, 8, 3&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>10.5</td>
+<td>&lt;17, 12, 12, 10, 7, 5&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>12.1667</td>
+<td>&lt;20, 19, 17, 12, 4, 1&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>12.1667</td>
+<td>&lt;19, 16, 14, 13, 10, 1&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>12.1667</td>
+<td>&lt;20, 19, 15, 12, 6, 1&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>17.8333</td>
+<td>&lt;20, 19, 18, 18, 18, 14&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>18.1667</td>
+<td>&lt;20, 20, 19, 18, 16, 16&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>18.1667</td>
+<td>&lt;20, 20, 20, 18, 16, 15&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>14.3333</td>
+<td>&lt;15, 15, 15, 14, 14, 13&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>15.8333</td>
+<td>&lt;17, 17, 16, 15, 15, 15&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>3.16667</td>
+<td>&lt;4, 4, 4, 3, 2, 2&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>9.83333</td>
+<td>&lt;16, 13, 12, 8, 7, 3&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>9.83333</td>
+<td>&lt;19, 10, 9, 8, 7, 6&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>12.8333</td>
+<td>&lt;18, 17, 16, 10, 9, 7&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>15.6667</td>
+<td>&lt;20, 20, 20, 16, 12, 6&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>14.6667</td>
+<td>&lt;20, 20, 19, 12, 10, 7&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>8.33333</td>
+<td>&lt;14, 13, 13, 6, 3, 1&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>8.83333</td>
+<td>&lt;18, 14, 11, 5, 4, 1&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>10.1667</td>
+<td>&lt;20, 15, 11, 8, 4, 3&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.8333</td>
+<td>&lt;19, 17, 14, 13, 6, 2&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>10.1667</td>
+<td>&lt;20, 20, 17, 2, 1, 1&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>13.6667</td>
+<td>&lt;20, 20, 20, 20, 1, 1&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>10.3333</td>
+<td>&lt;20, 20, 18, 2, 1, 1&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+<h1 id="standard-points">Standard Points</h1>
+<p>Standard distribution of &lt;15 14 12 11 10 8&gt;.</p>
+<h2 id="means-1">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance-1">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>6.66667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>6.66667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>6.66667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions-1">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+<td>10</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+<tr>
+<td>&lt;204, 204, 204, 204, 204, 204&gt;</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected-1">Times value was selected</h2>
+<p>Total sample count: 10</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr>
+<td>12</td>
+<td>10</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>10</td>
+</tr>
+<tr>
+<td>15</td>
+<td>10</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>0</td>
+</tr>
+<tr>
+<td>18</td>
+<td>0</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean-1">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance-1">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 14, 12, 11, 10, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+<h1 id="grid-all-directions">Grid All Directions</h1>
+<p>Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest 6.</p>
+<h2 id="means-2">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>5</td>
+<td>&lt;7, 5, 5, 5, 5, 3&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>11.5</td>
+<td>&lt;15, 13, 13, 11, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>17.3333</td>
+<td>&lt;18, 18, 18, 17, 17, 16&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance-2">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0</td>
+<td>&lt;9, 9, 9, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3.36667</td>
+<td>&lt;11, 11, 9, 8, 7, 7&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>16.5667</td>
+<td>&lt;17, 15, 9, 8, 8, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions-2">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;12, 11, 10, 10, 9, 9&gt;</td>
+<td>31</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 13, 12, 12, 11&gt;</td>
+<td>29</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 13, 13, 12, 11&gt;</td>
+<td>28</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 12, 11, 10, 9&gt;</td>
+<td>28</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 12, 11, 11&gt;</td>
+<td>26</td>
+</tr>
+<tr>
+<td>&lt;14, 12, 12, 11, 11, 10&gt;</td>
+<td>25</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>25</td>
+</tr>
+<tr>
+<td>&lt;13, 13, 12, 11, 11, 10&gt;</td>
+<td>24</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>23</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 10, 10&gt;</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected-2">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>39</td>
+</tr>
+<tr>
+<td>5</td>
+<td>239</td>
+</tr>
+<tr>
+<td>6</td>
+<td>819</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2070</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4240</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6422</td>
+</tr>
+<tr>
+<td>10</td>
+<td>8106</td>
+</tr>
+<tr>
+<td>11</td>
+<td>8915</td>
+</tr>
+<tr>
+<td>12</td>
+<td>8709</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7592</td>
+</tr>
+<tr>
+<td>14</td>
+<td>5497</td>
+</tr>
+<tr>
+<td>15</td>
+<td>3607</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2231</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1158</td>
+</tr>
+<tr>
+<td>18</td>
+<td>352</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean-2">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>5</td>
+<td>&lt;7, 5, 5, 5, 5, 3&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>5.16667</td>
+<td>&lt;6, 6, 5, 5, 5, 4&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>5.33333</td>
+<td>&lt;8, 7, 5, 4, 4, 4&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>10.3333</td>
+<td>&lt;13, 12, 10, 10, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>10.3333</td>
+<td>&lt;13, 12, 11, 9, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>10.3333</td>
+<td>&lt;12, 11, 11, 10, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.5</td>
+<td>&lt;15, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.5</td>
+<td>&lt;15, 13, 13, 11, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.5</td>
+<td>&lt;15, 13, 11, 11, 11, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>12.6667</td>
+<td>&lt;14, 13, 13, 13, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>12.6667</td>
+<td>&lt;15, 13, 13, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>12.6667</td>
+<td>&lt;15, 13, 13, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>16.6667</td>
+<td>&lt;18, 18, 17, 16, 16, 15&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>16.6667</td>
+<td>&lt;18, 17, 17, 17, 16, 15&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>17.3333</td>
+<td>&lt;18, 18, 18, 17, 17, 16&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance-2">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>9</td>
+<td>&lt;9, 9, 9, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>12.1667</td>
+<td>&lt;13, 12, 12, 12, 12, 12&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>10</td>
+<td>&lt;12, 11, 10, 10, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>12</td>
+<td>&lt;14, 13, 12, 12, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>9</td>
+<td>&lt;11, 10, 9, 9, 8, 7&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>12.8333</td>
+<td>&lt;15, 14, 14, 12, 12, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>8.83333</td>
+<td>&lt;11, 11, 9, 8, 7, 7&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.1667</td>
+<td>&lt;14, 12, 12, 10, 10, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;14, 13, 13, 12, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>10.6667</td>
+<td>&lt;13, 12, 12, 11, 9, 7&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>9.33333</td>
+<td>&lt;12, 12, 9, 9, 7, 7&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>11.8333</td>
+<td>&lt;17, 17, 10, 10, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>11.8333</td>
+<td>&lt;18, 16, 10, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>10.8333</td>
+<td>&lt;17, 15, 9, 8, 8, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+<h1 id="grid-all-directions-center-3">Grid All Directions Center 3</h1>
+<p>Roll 8 d6. Lay in grid 3 x 3 and add a 3 as the center value. Sum all horizontal, vertical and diagonal lines. Take the highest 6.</p>
+<h2 id="means-3">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>5.66667</td>
+<td>&lt;8, 6, 5, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>11.1667</td>
+<td>&lt;12, 12, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>16.5</td>
+<td>&lt;18, 18, 17, 16, 15, 15&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance-3">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0</td>
+<td>&lt;9, 9, 9, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3.06667</td>
+<td>&lt;16, 15, 14, 13, 13, 11&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>15.5</td>
+<td>&lt;17, 16, 15, 10, 9, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions-3">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;13, 12, 11, 10, 10, 9&gt;</td>
+<td>39</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 10, 9&gt;</td>
+<td>38</td>
+</tr>
+<tr>
+<td>&lt;13, 13, 12, 11, 11, 10&gt;</td>
+<td>36</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 11, 10, 9, 9&gt;</td>
+<td>36</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>34</td>
+</tr>
+<tr>
+<td>&lt;12, 11, 11, 10, 10, 9&gt;</td>
+<td>34</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 11, 11, 10, 10&gt;</td>
+<td>33</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>33</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>32</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 13, 12, 11, 11&gt;</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected-3">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>217</td>
+</tr>
+<tr>
+<td>6</td>
+<td>837</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2106</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4415</td>
+</tr>
+<tr>
+<td>9</td>
+<td>7021</td>
+</tr>
+<tr>
+<td>10</td>
+<td>9786</td>
+</tr>
+<tr>
+<td>11</td>
+<td>9830</td>
+</tr>
+<tr>
+<td>12</td>
+<td>8731</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7117</td>
+</tr>
+<tr>
+<td>14</td>
+<td>5037</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2993</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1174</td>
+</tr>
+<tr>
+<td>17</td>
+<td>546</td>
+</tr>
+<tr>
+<td>18</td>
+<td>187</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean-3">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>5.66667</td>
+<td>&lt;8, 6, 5, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>5.66667</td>
+<td>&lt;7, 6, 6, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>5.66667</td>
+<td>&lt;8, 6, 5, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>10</td>
+<td>&lt;14, 11, 10, 9, 9, 7&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>10</td>
+<td>&lt;13, 10, 10, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>10</td>
+<td>&lt;11, 10, 10, 10, 10, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.1667</td>
+<td>&lt;15, 12, 12, 10, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.1667</td>
+<td>&lt;12, 12, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.1667</td>
+<td>&lt;14, 12, 12, 10, 10, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>12.3333</td>
+<td>&lt;15, 12, 12, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>12.3333</td>
+<td>&lt;15, 13, 13, 12, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>12.3333</td>
+<td>&lt;15, 15, 14, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>16.1667</td>
+<td>&lt;17, 17, 17, 17, 15, 14&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>16.1667</td>
+<td>&lt;18, 17, 17, 15, 15, 15&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>16.5</td>
+<td>&lt;18, 18, 17, 16, 15, 15&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance-3">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>9</td>
+<td>&lt;9, 9, 9, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>9</td>
+<td>&lt;9, 9, 9, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>11</td>
+<td>&lt;11, 11, 11, 11, 11, 11&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;13, 13, 12, 12, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>10.6667</td>
+<td>&lt;13, 11, 11, 10, 10, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>12.3333</td>
+<td>&lt;15, 12, 12, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>10.6667</td>
+<td>&lt;14, 11, 10, 10, 10, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>13.6667</td>
+<td>&lt;16, 15, 14, 13, 13, 11&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>10.3333</td>
+<td>&lt;13, 12, 10, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>14.1667</td>
+<td>&lt;16, 16, 15, 15, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.1667</td>
+<td>&lt;13, 13, 12, 12, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>9.83333</td>
+<td>&lt;13, 11, 11, 8, 8, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;16, 14, 10, 8, 8, 7&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>12.3333</td>
+<td>&lt;18, 15, 13, 10, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>12.5</td>
+<td>&lt;17, 16, 15, 10, 9, 8&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+<h1 id="grid-all-directions-flip">Grid All Directions Flip</h1>
+<p>Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.</p>
+<h2 id="means-4">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>11.3333</td>
+<td>&lt;17, 12, 12, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>13</td>
+<td>&lt;18, 18, 12, 12, 9, 9&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance-4">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0.166667</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3.86667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>45.0667</td>
+<td>&lt;17, 17, 17, 17, 4, 4&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions-4">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+<td>354</td>
+</tr>
+<tr>
+<td>&lt;14, 11, 11, 11, 10, 10&gt;</td>
+<td>295</td>
+</tr>
+<tr>
+<td>&lt;13, 11, 11, 11, 10, 10&gt;</td>
+<td>283</td>
+</tr>
+<tr>
+<td>&lt;15, 11, 11, 11, 10, 10&gt;</td>
+<td>250</td>
+</tr>
+<tr>
+<td>&lt;12, 11, 11, 11, 10, 10&gt;</td>
+<td>241</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 11, 11, 10, 10&gt;</td>
+<td>234</td>
+</tr>
+<tr>
+<td>&lt;14, 11, 11, 10, 10, 10&gt;</td>
+<td>228</td>
+</tr>
+<tr>
+<td>&lt;12, 12, 12, 9, 9, 9&gt;</td>
+<td>217</td>
+</tr>
+<tr>
+<td>&lt;13, 11, 11, 10, 10, 10&gt;</td>
+<td>205</td>
+</tr>
+<tr>
+<td>&lt;16, 11, 11, 11, 10, 10&gt;</td>
+<td>194</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected-4">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>18</td>
+</tr>
+<tr>
+<td>6</td>
+<td>156</td>
+</tr>
+<tr>
+<td>7</td>
+<td>706</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2611</td>
+</tr>
+<tr>
+<td>9</td>
+<td>6848</td>
+</tr>
+<tr>
+<td>10</td>
+<td>12179</td>
+</tr>
+<tr>
+<td>11</td>
+<td>13593</td>
+</tr>
+<tr>
+<td>12</td>
+<td>9690</td>
+</tr>
+<tr>
+<td>13</td>
+<td>5723</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3348</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2282</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1618</td>
+</tr>
+<tr>
+<td>17</td>
+<td>899</td>
+</tr>
+<tr>
+<td>18</td>
+<td>327</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean-4">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.5</td>
+<td>&lt;14, 14, 14, 7, 7, 7&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11</td>
+<td>&lt;17, 14, 14, 7, 7, 7&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11</td>
+<td>&lt;14, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11</td>
+<td>&lt;12, 12, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.3333</td>
+<td>&lt;13, 13, 12, 12, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.3333</td>
+<td>&lt;17, 12, 12, 9, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.3333</td>
+<td>&lt;14, 12, 12, 11, 10, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;17, 11, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 13, 13, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 12, 12, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>12.8333</td>
+<td>&lt;16, 14, 13, 13, 13, 8&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>13</td>
+<td>&lt;18, 18, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>13</td>
+<td>&lt;18, 18, 12, 12, 9, 9&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance-4">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>10.8333</td>
+<td>&lt;12, 12, 12, 11, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>10.8333</td>
+<td>&lt;12, 12, 12, 11, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>10.8333</td>
+<td>&lt;12, 12, 12, 11, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.8333</td>
+<td>&lt;17, 12, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>12.1667</td>
+<td>&lt;17, 13, 12, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.8333</td>
+<td>&lt;17, 12, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;16, 16, 16, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>10.5</td>
+<td>&lt;16, 16, 16, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>12.6667</td>
+<td>&lt;17, 17, 17, 17, 4, 4&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+<h1 id="grid-no-diagonals-flip">Grid No Diagonals Flip</h1>
+<p>Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal and vertical lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.</p>
+<h2 id="means-5">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>11.3333</td>
+<td>&lt;14, 13, 13, 12, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>13</td>
+<td>&lt;18, 18, 12, 12, 9, 9&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance-5">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0.166667</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3.86667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>42.9667</td>
+<td>&lt;18, 17, 17, 13, 4, 4&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions-5">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+<td>454</td>
+</tr>
+<tr>
+<td>&lt;12, 12, 12, 9, 9, 9&gt;</td>
+<td>330</td>
+</tr>
+<tr>
+<td>&lt;13, 11, 11, 11, 10, 10&gt;</td>
+<td>260</td>
+</tr>
+<tr>
+<td>&lt;14, 11, 11, 11, 10, 10&gt;</td>
+<td>238</td>
+</tr>
+<tr>
+<td>&lt;12, 11, 11, 11, 10, 10&gt;</td>
+<td>230</td>
+</tr>
+<tr>
+<td>&lt;15, 11, 11, 11, 10, 10&gt;</td>
+<td>225</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 11, 11, 10, 10&gt;</td>
+<td>200</td>
+</tr>
+<tr>
+<td>&lt;13, 12, 12, 12, 9, 9&gt;</td>
+<td>189</td>
+</tr>
+<tr>
+<td>&lt;13, 11, 11, 10, 10, 10&gt;</td>
+<td>180</td>
+</tr>
+<tr>
+<td>&lt;14, 12, 12, 12, 9, 9&gt;</td>
+<td>177</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected-5">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>23</td>
+</tr>
+<tr>
+<td>6</td>
+<td>220</td>
+</tr>
+<tr>
+<td>7</td>
+<td>866</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3056</td>
+</tr>
+<tr>
+<td>9</td>
+<td>7242</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11383</td>
+</tr>
+<tr>
+<td>11</td>
+<td>12473</td>
+</tr>
+<tr>
+<td>12</td>
+<td>10107</td>
+</tr>
+<tr>
+<td>13</td>
+<td>6212</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3618</td>
+</tr>
+<tr>
+<td>15</td>
+<td>2291</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1414</td>
+</tr>
+<tr>
+<td>17</td>
+<td>809</td>
+</tr>
+<tr>
+<td>18</td>
+<td>282</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean-5">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.5</td>
+<td>&lt;13, 13, 13, 8, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>10.5</td>
+<td>&lt;11, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11</td>
+<td>&lt;14, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11</td>
+<td>&lt;14, 13, 13, 10, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11</td>
+<td>&lt;14, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.3333</td>
+<td>&lt;16, 11, 11, 10, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.3333</td>
+<td>&lt;14, 13, 13, 12, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.3333</td>
+<td>&lt;15, 11, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;13, 13, 12, 12, 11, 9&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;14, 13, 12, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;13, 13, 12, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>12.8333</td>
+<td>&lt;18, 17, 12, 12, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>13</td>
+<td>&lt;18, 18, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>13</td>
+<td>&lt;18, 18, 12, 12, 9, 9&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance-5">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>10.8333</td>
+<td>&lt;11, 11, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;13, 13, 12, 12, 11, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11.3333</td>
+<td>&lt;14, 12, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;14, 13, 11, 11, 11, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;15, 13, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>12.3333</td>
+<td>&lt;16, 13, 13, 13, 11, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>12.3333</td>
+<td>&lt;17, 13, 12, 12, 11, 9&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;16, 13, 12, 11, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>10.5</td>
+<td>&lt;16, 16, 16, 5, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>11.8333</td>
+<td>&lt;17, 17, 17, 12, 4, 4&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>12.1667</td>
+<td>&lt;18, 17, 17, 13, 4, 4&gt;</td>
+</tr>
+</tbody>
+</table>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mspace linebreak="newline" height="21.681em"></mspace></mrow><annotation encoding="application/x-tex">\\[3in]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="mspace newline" style="margin-top:21.681em;"></span></span></span></span></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
