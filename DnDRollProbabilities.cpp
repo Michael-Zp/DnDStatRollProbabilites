@@ -592,15 +592,40 @@ PointDistribution gridNoDiagonalsFlip()
     return sample;
 }
 
+PointDistribution r4D6D1()
+{
+    PointDistribution sample;
+
+    auto rollOnce = []() {
+        std::array<uint8_t, 4> rolls;
+        for (int i = 0; i < rolls.size(); ++i)
+        {
+            rolls[i] = rD6();
+        }
+
+        std::sort(rolls.begin(), rolls.end());
+        return std::accumulate(rolls.begin() + 1, rolls.end(), 0);
+    };
+
+    for (int i = 0; i < sample.points.size(); ++i)
+    {
+        sample.points[i] = rollOnce();
+    }
+
+    sample.ProcessStatistics();
+    return sample;
+}
+
 int main()
 {
     std::stringstream summaryOutString;
-    measure(summaryOutString, 10000, rD20DistFunc, "D20 Raw", "Just roll a d20 and take 6 numbers.");
-    measure(summaryOutString, 10, standardPoints, "Standard Points", "Standard distribution of <15 14 12 11 10 8>.");
-    measure(summaryOutString, 10000, gridAllDirs, "Grid All Directions", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest 6.");
-    measure(summaryOutString, 10000, gridAllDirsCenter3, "Grid All Directions Center 3", "Roll 8 d6. Lay in grid 3 x 3 and add a 3 as the center value. Sum all horizontal, vertical and diagonal lines. Take the highest 6.");
-    measure(summaryOutString, 10000, gridAllDirsFlip, "Grid All Directions Flip", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.");
-    measure(summaryOutString, 10000, gridNoDiagonalsFlip, "Grid No Diagonals Flip", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal and vertical lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.");
+    //measure(summaryOutString, 10000, rD20DistFunc, "D20 Raw", "Just roll a d20 and take 6 numbers.");
+    //measure(summaryOutString, 10, standardPoints, "Standard Points", "Standard distribution of <15 14 12 11 10 8>.");
+    //measure(summaryOutString, 10000, gridAllDirs, "Grid All Directions", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest 6.");
+    //measure(summaryOutString, 10000, gridAllDirsCenter3, "Grid All Directions Center 3", "Roll 8 d6. Lay in grid 3 x 3 and add a 3 as the center value. Sum all horizontal, vertical and diagonal lines. Take the highest 6.");
+    //measure(summaryOutString, 10000, gridAllDirsFlip, "Grid All Directions Flip", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal, vertical and diagonal lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.");
+    //measure(summaryOutString, 10000, gridNoDiagonalsFlip, "Grid No Diagonals Flip", "Roll 9 d6. Lay in grid 3 x 3. Sum all horizontal and vertical lines. Take the highest. Flip the dice of the chosen lane. Repeat 6 times.");
+    measure(summaryOutString, 10000, r4D6D1, "Roll 4D6D1", "Roll 4 d6. Drop the lowest. Take sum. Repeat 6 times.");
 
     std::ofstream outfile("allMethods.md");
     outfile << summaryOutString.str();

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Roll 4D4D1</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="roll-4d4d1">Roll 4D4D1</h1>
+<p>Roll 4 d4. Drop the lowest. Take sum. Repeat 6 times.</p>
+<h2 id="means">Means</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>7</td>
+<td>&lt;10, 9, 7, 6, 6, 4&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>12.3333</td>
+<td>&lt;18, 16, 13, 12, 12, 3&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>16.3333</td>
+<td>&lt;18, 17, 17, 16, 16, 14&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variance">Variance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Variance</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min</td>
+<td>0.166667</td>
+<td>&lt;12, 12, 12, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>7.1</td>
+<td>&lt;17, 13, 13, 12, 11, 9&gt;</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>31.7667</td>
+<td>&lt;18, 14, 12, 5, 5, 5&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="most-common-rolled-distributions">Most common rolled distributions</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Rolled n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;15, 14, 13, 12, 12, 11&gt;</td>
+<td>18</td>
+</tr>
+<tr>
+<td>&lt;14, 13, 12, 11, 11, 10&gt;</td>
+<td>16</td>
+</tr>
+<tr>
+<td>&lt;16, 15, 14, 13, 12, 10&gt;</td>
+<td>16</td>
+</tr>
+<tr>
+<td>&lt;16, 15, 14, 13, 12, 10&gt;</td>
+<td>15</td>
+</tr>
+<tr>
+<td>&lt;17, 15, 14, 13, 12, 11&gt;</td>
+<td>15</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 14, 13, 12, 11&gt;</td>
+<td>15</td>
+</tr>
+<tr>
+<td>&lt;16, 15, 14, 13, 11, 11&gt;</td>
+<td>14</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 13, 12, 11, 9&gt;</td>
+<td>14</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 13, 12, 11, 9&gt;</td>
+<td>13</td>
+</tr>
+<tr>
+<td>&lt;15, 14, 13, 13, 12, 11&gt;</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<h2 id="times-value-was-selected">Times value was selected</h2>
+<p>Total sample count: 10000</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Selected n times</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>39</td>
+</tr>
+<tr>
+<td>4</td>
+<td>188</td>
+</tr>
+<tr>
+<td>5</td>
+<td>468</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1006</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1786</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2898</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4171</td>
+</tr>
+<tr>
+<td>10</td>
+<td>5557</td>
+</tr>
+<tr>
+<td>11</td>
+<td>6876</td>
+</tr>
+<tr>
+<td>12</td>
+<td>7732</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7991</td>
+</tr>
+<tr>
+<td>14</td>
+<td>7532</td>
+</tr>
+<tr>
+<td>15</td>
+<td>6038</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4334</td>
+</tr>
+<tr>
+<td>17</td>
+<td>2468</td>
+</tr>
+<tr>
+<td>18</td>
+<td>916</td>
+</tr>
+<tr>
+<td>19</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-mean">Sorted by mean</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>7</td>
+<td>&lt;10, 9, 7, 6, 6, 4&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>7.83333</td>
+<td>&lt;14, 9, 8, 6, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>7.83333</td>
+<td>&lt;11, 9, 7, 7, 7, 6&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>11.5</td>
+<td>&lt;14, 13, 12, 12, 9, 9&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>11.5</td>
+<td>&lt;15, 13, 11, 11, 11, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11.5</td>
+<td>&lt;15, 14, 11, 11, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>12.3333</td>
+<td>&lt;17, 14, 13, 12, 10, 8&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>12.3333</td>
+<td>&lt;18, 16, 13, 12, 12, 3&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>12.3333</td>
+<td>&lt;14, 14, 14, 12, 12, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>13</td>
+<td>&lt;15, 14, 13, 13, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>13</td>
+<td>&lt;16, 15, 13, 13, 12, 9&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>13</td>
+<td>&lt;16, 15, 13, 12, 11, 11&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>16</td>
+<td>&lt;17, 17, 16, 16, 15, 15&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>16.1667</td>
+<td>&lt;18, 17, 17, 16, 15, 14&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>16.3333</td>
+<td>&lt;18, 17, 17, 16, 16, 14&gt;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sorted-by-variance">Sorted by variance</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example #</th>
+<th>Mean</th>
+<th>Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum</td>
+<td>1</td>
+<td>11.8333</td>
+<td>&lt;12, 12, 12, 12, 12, 11&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>2</td>
+<td>10.6667</td>
+<td>&lt;11, 11, 11, 11, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>3</td>
+<td>13.3333</td>
+<td>&lt;14, 14, 13, 13, 13, 13&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>1</td>
+<td>10.8333</td>
+<td>&lt;14, 12, 11, 11, 9, 8&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>2</td>
+<td>13.8333</td>
+<td>&lt;16, 15, 15, 14, 13, 10&gt;</td>
+</tr>
+<tr>
+<td>25th Percentile</td>
+<td>3</td>
+<td>11.1667</td>
+<td>&lt;14, 13, 12, 10, 9, 9&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Median</td>
+<td>1</td>
+<td>12.5</td>
+<td>&lt;17, 14, 12, 12, 10, 10&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>2</td>
+<td>12.5</td>
+<td>&lt;17, 13, 13, 12, 11, 9&gt;</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>3</td>
+<td>12.5</td>
+<td>&lt;15, 15, 13, 13, 11, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>1</td>
+<td>10.3333</td>
+<td>&lt;15, 14, 9, 8, 8, 8&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>2</td>
+<td>11.6667</td>
+<td>&lt;16, 14, 13, 10, 10, 7&gt;</td>
+</tr>
+<tr>
+<td>75th Percentile</td>
+<td>3</td>
+<td>11.6667</td>
+<td>&lt;16, 15, 12, 10, 9, 8&gt;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>1</td>
+<td>11.1667</td>
+<td>&lt;18, 17, 12, 9, 6, 5&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>2</td>
+<td>10.5</td>
+<td>&lt;17, 16, 13, 7, 5, 5&gt;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>3</td>
+<td>9.83333</td>
+<td>&lt;18, 14, 12, 5, 5, 5&gt;</td>
+</tr>
+</tbody>
+</table>
+
+            
+            
+        </body>
+        </html>
